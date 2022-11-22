@@ -37,7 +37,8 @@ public class PacienteMap : IEntityTypeConfiguration<PacienteEntidade>
         builder.Property(x => x.DataDeNascimento)
             .IsRequired()
             .HasColumnName("DataNascimento")
-            .HasColumnType("varchar");
+            .HasColumnType("varchar")
+            .HasMaxLength(20);
 
         builder.Property(x => x.Endereco)
             .IsRequired()

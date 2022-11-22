@@ -3,10 +3,11 @@ using GestaoDeUbs.Domain.Command.Paciente;
 using GestaoDeUbs.Domain.Entities;
 using GestaoDeUbs.Domain.Handlers;
 using GestaoDeUbs.Domain.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeUbs.Api.Controllers;
-
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class PacienteController : ControllerBase
@@ -55,5 +56,14 @@ public class PacienteController : ControllerBase
         return _repositorio.BuscarPorId(id);
     }
 
+    #endregion
+
+    #region BuscarTodos
+    [AllowAnonymous]
+    [HttpGet]
+    public IEnumerable<PacienteEntidade> BuscarTodos([FromServices] IPacienteRepositorio repositorio)
+    {
+        return repositorio.BuscarTodos();
+    }
     #endregion
 }

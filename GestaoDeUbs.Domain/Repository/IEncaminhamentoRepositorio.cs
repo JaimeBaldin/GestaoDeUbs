@@ -8,5 +8,7 @@ public interface IEncaminhamentoRepositorio
     void Alterar(EncaminhamentoEntidade encaminhamento);
     void Excluir(EncaminhamentoEntidade encaminhamento);
     IEnumerable<EncaminhamentoEntidade> BuscarTodos();
+    IEnumerable<EncaminhamentoEntidade> BuscarPorPaciente(int idPaciente);
+    IEnumerable<EncaminhamentoEntidade> BuscarPorHospital(int idHospital);
     EncaminhamentoEntidade? BuscarPorId(int id);
 }
