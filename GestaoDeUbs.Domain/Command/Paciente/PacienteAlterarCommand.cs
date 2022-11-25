@@ -10,17 +10,17 @@ public class PacienteAlterarCommand : Notificavel, ICommand
     public string Rg { get; set; }
     public string Cpf { get; set; }
     public string Endereco { get; set; }
-    public string DataDeNascimetno { get; set; }
+    public string DataDeNascimento { get; set; }
 
 
-    public PacienteAlterarCommand(int id, string nome, string rg, string cpf, string endereco, string dataNascimetno)
+    public PacienteAlterarCommand(int id, string nome, string rg, string cpf, string endereco, string dataDeNascimento)
     {
         Id = id;
         Nome = nome;
         Rg = rg;
         Cpf = cpf;
         Endereco = endereco;
-        DataDeNascimetno = dataNascimetno;
+        DataDeNascimento = dataDeNascimento;
     }
 
 

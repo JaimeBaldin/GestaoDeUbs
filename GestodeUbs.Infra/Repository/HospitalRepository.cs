@@ -44,7 +44,6 @@ public class HospitalRepository : IHospitalRepositorio
     {
         return _contexto.Hospitais
             .AsNoTracking()
-            .Include(x => x.Encaminhamentos)
-            .Include(x => x.Nome);
+            .Include(x => x.Encaminhamentos);
     }
 }

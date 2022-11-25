@@ -48,7 +48,7 @@ public class EncaminhamentoHandler : IHandler<EncaminhamentoInserirCommand>, IHa
 
         encaminhamento.Nome = comando.Nome;
         encaminhamento.Observacoes = comando.Observacoes;
-        encaminhamento.DataEncaminhamento = comando.DataDeEncaminhamento;
+        encaminhamento.DataEncaminhamento = comando.DataEncaminhamento;
         encaminhamento.PacienteId = comando.PacienteId;
         encaminhamento.HospitalId = comando.HospitalId;
 

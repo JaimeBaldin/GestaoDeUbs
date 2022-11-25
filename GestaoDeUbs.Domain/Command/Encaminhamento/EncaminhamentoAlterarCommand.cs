@@ -6,18 +6,18 @@ namespace GestaoDeUbs.Domain.Command.Encaminhamento;
 public class EncaminhamentoAlterarCommand : Notificavel, ICommand
 {
     public int Id { get; set; }
-    public string Nome { get; set; }
+    public string? Nome { get; set; }
     public string Observacoes { get; set; }
-    public string DataDeEncaminhamento { get; set; }
+    public string DataEncaminhamento { get; set; }
     public int PacienteId { get; set; }
     public int HospitalId { get; set; }
 
-    public EncaminhamentoAlterarCommand(int id, string nome, string observacoes, string data, int pacienteId, int hospitalId)
+    public EncaminhamentoAlterarCommand(int id, string nome, string observacoes, string dataEncaminhamento, int pacienteId, int hospitalId)
     {
         Id = id;
         Nome = nome;
         Observacoes = observacoes;
-        DataDeEncaminhamento = data;
+        DataEncaminhamento = dataEncaminhamento;
         PacienteId = pacienteId;
         HospitalId = hospitalId;
     }
@@ -26,9 +26,7 @@ public class EncaminhamentoAlterarCommand : Notificavel, ICommand
     {
         if (Id <= 0)
             AdicionarNotificacao("Id é obrigatório");
-
-        if (string.IsNullOrEmpty(Nome))
-            AdicionarNotificacao("Nome é obrigatório");
+   
 
         if (string.IsNullOrEmpty(Observacoes))
             AdicionarNotificacao("O nome deve ser informado");

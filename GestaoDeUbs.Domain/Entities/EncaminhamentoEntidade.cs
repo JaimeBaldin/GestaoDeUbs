@@ -2,7 +2,7 @@
 
 public class EncaminhamentoEntidade : Entidade
 {
-    public string Nome { get; set; }
+    public string? Nome { get; set; }
     public string Observacoes { get; set; }
     public string DataEncaminhamento { get; set; }
     public int PacienteId { get; set; }

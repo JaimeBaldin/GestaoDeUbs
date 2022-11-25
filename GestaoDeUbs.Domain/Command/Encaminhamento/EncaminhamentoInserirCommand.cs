@@ -5,7 +5,7 @@ namespace GestaoDeUbs.Domain.Command.Encaminhamento;
 
 public class EncaminhamentoInserirCommand : Notificavel, ICommand
 {
-    public string Nome { get; set; }
+    public string? Nome { get; set; }
     public string Observacoes { get; set; }
     public string Data { get; set; }
     public int PacienteId { get; set; }
@@ -22,8 +22,6 @@ public class EncaminhamentoInserirCommand : Notificavel, ICommand
 
     public void Validar()
     {
-        if (string.IsNullOrEmpty(Nome))
-            AdicionarNotificacao("Nome é obrigatório");
 
         if (string.IsNullOrEmpty(Observacoes))
             AdicionarNotificacao("O nome deve ser informado");

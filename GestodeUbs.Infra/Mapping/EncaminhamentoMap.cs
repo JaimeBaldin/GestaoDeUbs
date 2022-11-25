@@ -16,9 +16,9 @@ public class EncaminhamentoMap : IEntityTypeConfiguration<EncaminhamentoEntidade
             .UseIdentityColumn();
 
         builder.Property(x => x.DataEncaminhamento)
-            .IsRequired()
             .HasColumnName("DataEncaminhamento")
-            .HasColumnType("varchar");
+            .HasColumnType("varchar")
+            .HasMaxLength(20);
 
         builder.Property(x => x.Observacoes)
             .IsRequired()

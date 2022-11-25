@@ -4,11 +4,13 @@ using GestaoDeUbs.Domain.Entities;
 using GestaoDeUbs.Domain.Handlers;
 using GestaoDeUbs.Domain.Repository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeUbs.Api.Controllers;
 [Authorize]
 [Route("api/[controller]")]
+[EnableCors("CorsPolicy")]
 [ApiController]
 public class HospitalController : ControllerBase
 {

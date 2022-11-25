@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Text;
 namespace GestaoDeUbs.Api.Controllers;
 
 [Route("api/[controller]")]
+[EnableCors("CorsPolicy")]
 [ApiController]
 public class LoginController : ControllerBase
 {

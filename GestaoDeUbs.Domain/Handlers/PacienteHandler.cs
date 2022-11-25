@@ -48,7 +48,7 @@ public class PacienteHandler : IHandler<PacienteInserirCommand>,IHandler<Pacient
         paciente.Nome = comando.Nome;
         paciente.Cpf = comando.Cpf;
         paciente.Rg = comando.Rg;
-        paciente.DataDeNascimento = comando.DataDeNascimetno;
+        paciente.DataDeNascimento = comando.DataDeNascimento;
         paciente.Endereco = comando.Endereco;
 
         _pacienteRepositorio.Alterar(paciente);

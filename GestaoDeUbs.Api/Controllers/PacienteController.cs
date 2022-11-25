@@ -12,6 +12,8 @@ namespace GestaoDeUbs.Api.Controllers;
 [ApiController]
 public class PacienteController : ControllerBase
 {
+ 
+    
     private readonly IPacienteRepositorio _repositorio;
 
     public PacienteController(IPacienteRepositorio repositorio)

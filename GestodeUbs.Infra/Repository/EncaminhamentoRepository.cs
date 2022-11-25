@@ -59,10 +59,9 @@ public class EncaminhamentoRepository : IEncaminhamentoRepositorio
     }
 
 
-    public IEnumerable<EncaminhamentoEntidade> BuscarTodos()
+    public  IEnumerable<EncaminhamentoEntidade> BuscarTodos()
     {
-        return _contexto.Encaminhamentos
-            .AsNoTracking()
+        return  _contexto.Encaminhamentos
             .Include(x => x.Paciente)
             .Include(x => x.Hospital);
     }

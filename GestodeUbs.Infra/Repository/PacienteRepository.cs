@@ -44,7 +44,6 @@ public class PacienteRepository : IPacienteRepositorio
     {
         return _contexto.Pacientes
             .AsNoTracking()
-            .Include(x => x.Encaminhamentos)
-            .Include(x => x.Nome);
+            .Include(x => x.Encaminhamentos);
     }
 }
