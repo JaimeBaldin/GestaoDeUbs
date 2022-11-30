@@ -1,4 +1,5 @@
 ﻿using GestaoDeUbs.Domain.Entities;
+using GestaoDeUbs.Domain.Handlers.Criptografia;
 using GestaoDeUbs.Domain.Queries;
 using GestaoDeUbs.Domain.Repository;
 using GestodeUbs.Infra.Context;
@@ -61,8 +62,18 @@ public class EncaminhamentoRepository : IEncaminhamentoRepositorio
 
     public  IEnumerable<EncaminhamentoEntidade> BuscarTodos()
     {
-        return  _contexto.Encaminhamentos
+        var dados = _contexto.Encaminhamentos
+            .AsNoTracking()
             .Include(x => x.Paciente)
-            .Include(x => x.Hospital);
+            .Include(x => x.Hospital)
+            .ToList();
+
+        foreach (var item in dados)
+        {
+            item.Paciente.Cpf = Criptografia.AesDecrypt(item.Paciente.Cpf);
+            item.Paciente.Rg = Criptografia.AesDecrypt(item.Paciente.Rg);
+            item.Paciente.Endereco = Criptografia.AesDecrypt(item.Paciente.Endereco);
+        }
+        return dados;
     }
 }

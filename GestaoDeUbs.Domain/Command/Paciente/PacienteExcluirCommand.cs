@@ -12,6 +12,7 @@ public class PacienteExcluirCommand : Notificavel, ICommand
         Id = id;
     }
 
+    public PacienteExcluirCommand() { }
     public void Validar()
     {
         if (Id <= 0)

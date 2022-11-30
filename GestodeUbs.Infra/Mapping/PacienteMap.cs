@@ -26,13 +26,13 @@ public class PacienteMap : IEntityTypeConfiguration<PacienteEntidade>
             .IsRequired()
             .HasColumnName("Cpf")
             .HasColumnType("varchar")
-            .HasMaxLength(11);
+            .HasMaxLength(20);
 
         builder.Property(x => x.Rg)
             .IsRequired()
             .HasColumnName("Rg")
             .HasColumnType("varchar")
-            .HasMaxLength(9);
+            .HasMaxLength(20);
 
         builder.Property(x => x.DataDeNascimento)
             .IsRequired()

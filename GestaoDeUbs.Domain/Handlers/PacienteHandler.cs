@@ -2,12 +2,13 @@
 using GestaoDeUbs.Domain.Command.Interfaces;
 using GestaoDeUbs.Domain.Command.Paciente;
 using GestaoDeUbs.Domain.Entities;
+using GestaoDeUbs.Domain.Handlers.Criptografia;
 using GestaoDeUbs.Domain.Handlers.Interfaces;
 using GestaoDeUbs.Domain.Repository;
 
 namespace GestaoDeUbs.Domain.Handlers;
 
-public class PacienteHandler : IHandler<PacienteInserirCommand>,IHandler<PacienteAlterarCommand>,IHandler<PacienteExcluirCommand>
+public class PacienteHandler :  IHandler<PacienteInserirCommand>, IHandler<PacienteAlterarCommand>, IHandler<PacienteExcluirCommand>
     
 {
     private readonly IPacienteRepositorio _pacienteRepositorio;
@@ -45,8 +46,9 @@ public class PacienteHandler : IHandler<PacienteInserirCommand>,IHandler<Pacient
         if (paciente == null)
             return new CommandResult(false, "Paciente não encontrado", comando);
 
+
         paciente.Nome = comando.Nome;
-        paciente.Cpf = comando.Cpf;
+        paciente.Cpf= comando.Cpf;
         paciente.Rg = comando.Rg;
         paciente.DataDeNascimento = comando.DataDeNascimento;
         paciente.Endereco = comando.Endereco;

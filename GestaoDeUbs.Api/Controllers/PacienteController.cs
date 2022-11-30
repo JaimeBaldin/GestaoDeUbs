@@ -5,6 +5,7 @@ using GestaoDeUbs.Domain.Handlers;
 using GestaoDeUbs.Domain.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace GestaoDeUbs.Api.Controllers;
 [Authorize]

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\source\repos\JaimeBaldin\GestaoDeUbs\tools\.store\.stage\b11br45q.wen</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Jaime\source\repos\JaimeBaldin\GestaoDeUbs\tools\.store\.stage\b11br45q.wen</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">DotnetToolReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.3.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\Jaime\source\repos\JaimeBaldin\GestaoDeUbs\tools\.store\.stage\b11br45q.wen\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgdotnet-reportgenerator-globaltool Condition=" '$(Pkgdotnet-reportgenerator-globaltool)' == '' ">C:\Users\Jaime\source\repos\JaimeBaldin\GestaoDeUbs\tools\.store\.stage\b11br45q.wen\dotnet-reportgenerator-globaltool\4.6.1</Pkgdotnet-reportgenerator-globaltool>
+  </PropertyGroup>
+</Project>

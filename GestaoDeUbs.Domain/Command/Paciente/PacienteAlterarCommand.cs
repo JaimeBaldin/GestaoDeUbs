@@ -1,4 +1,5 @@
 ﻿using GestaoDeUbs.Domain.Command.Interfaces;
+using GestaoDeUbs.Domain.Handlers.Criptografia;
 using GestaoDeUbs.Domain.Validation;
 
 namespace GestaoDeUbs.Domain.Command.Paciente;
@@ -17,9 +18,9 @@ public class PacienteAlterarCommand : Notificavel, ICommand
     {
         Id = id;
         Nome = nome;
-        Rg = rg;
-        Cpf = cpf;
-        Endereco = endereco;
+        Rg = Criptografia.AesEncrypt(rg);
+        Cpf = Criptografia.AesEncrypt(cpf);
+        Endereco = Criptografia.AesEncrypt(endereco);
         DataDeNascimento = dataDeNascimento;
     }
 

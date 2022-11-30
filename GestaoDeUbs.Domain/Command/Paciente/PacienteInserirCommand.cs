@@ -1,4 +1,5 @@
 ﻿using GestaoDeUbs.Domain.Command.Interfaces;
+using GestaoDeUbs.Domain.Handlers.Criptografia;
 using GestaoDeUbs.Domain.Validation;
 using Microsoft.VisualBasic;
 
@@ -12,17 +13,17 @@ public class PacienteInserirCommand : Notificavel, ICommand
     public string Endereco { get; set; }
     public string  DataNascimetno { get; set; }
 
-    public PacienteInserirCommand(string nome, string rg, string cpf, string endereco, string dataNascimetno)
+    public PacienteInserirCommand(string nome, string rg, string cpf,string endereco, string dataNascimetno)
     {
         Nome = nome;
-        Rg = rg;
-        Cpf = cpf;
-        Endereco = endereco;
+        Rg = Criptografia.AesEncrypt(rg);
+        Cpf = Criptografia.AesEncrypt(cpf);
+        Endereco = Criptografia.AesEncrypt(endereco);
         DataNascimetno = dataNascimetno;
     }
 
+    public PacienteInserirCommand() { }
 
-    
 
     public void Validar()
     {
